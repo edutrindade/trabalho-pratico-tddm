@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "trabalho-pratico",
+    "slug": "trabalho-pratico",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
