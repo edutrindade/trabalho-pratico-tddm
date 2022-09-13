@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 import Input from '../components/Input';
 import colors from '../global/colors';
@@ -13,24 +13,26 @@ export default function SignIn() {
     }
 
     return (
-        <View style={styles.container}>
-            <Image
-                source={require('../assets/img/user.png')}
-                resizeMode="contain"
-                style={{ width: '50%', height: '30%' }}
-            />
-            <View style={styles.form}>
-                <Input placeholder="E-mail" keyboardType="email-address" />
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+                <Image
+                    source={require('../assets/img/sinuca.png')}
+                    resizeMode="contain"
+                    style={{ width: '60%', height: '40%' }}
+                />
+                <View style={styles.form}>
+                    <Input placeholder="E-mail" keyboardType="email-address" />
 
-                <Input placeholder="Senha" security autoCorrect={false} returnKeyType="go" />
+                    <Input placeholder="Senha" security autoCorrect={false} returnKeyType="go" />
 
-                <TouchableOpacity style={styles.button} onPress={handleSignIn}>
-                    <Text style={styles.textButton}>
-                        Entrar
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={handleSignIn}>
+                        <Text style={styles.textButton}>
+                            Entrar
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     );
 }
 
