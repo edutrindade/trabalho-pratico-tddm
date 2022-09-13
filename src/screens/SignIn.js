@@ -22,7 +22,7 @@ export default function SignIn() {
                     style={{ width: '60%', height: '40%' }}
                 />
                 <View style={styles.form}>
-                    <Input placeholder="E-mail" keyboardType="email-address" />
+                    <Input placeholder="Usuário" keyboardType="email-address" />
 
                     <Input placeholder="Senha" security autoCorrect={false} returnKeyType="go" />
 
