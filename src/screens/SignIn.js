@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, SafeAreaView, StatusBar } from 'react-native';
 
 import Input from '../components/Input';
 import colors from '../global/colors';
@@ -14,7 +14,8 @@ export default function SignIn() {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
+                <StatusBar />
                 <Image
                     source={require('../assets/img/sinuca.png')}
                     resizeMode="contain"
@@ -31,7 +32,7 @@ export default function SignIn() {
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </SafeAreaView>
         </TouchableWithoutFeedback>
     );
 }
