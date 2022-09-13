@@ -4,10 +4,10 @@ import colors from '../global/colors';
 
 import Header from '../components/Header';
 
-export default function Home() {
+export default function Profile() {
     return (
         <View style={styles.container}>
-            <Header title="Home" backButton={false} exitButton />
+            <Header title="Perfil" backButton={false} />
         </View>
     );
 }
