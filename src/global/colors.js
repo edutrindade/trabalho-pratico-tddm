@@ -1,5 +1,9 @@
 const colors = (color) => {
     switch (color) {
+        case 'primary':
+            return '#FFF0B8';
+        case 'secondary':
+            return '#142F30';
         case 'green':
             return '#4caf50';
         case 'red':

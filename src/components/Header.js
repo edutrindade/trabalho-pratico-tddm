@@ -1,15 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { ArrowLeft, ArrowFatLinesRight } from 'phosphor-react-native';
 import colors from '../global/colors';
 
-export default function Header({ title }) {
+export default function Header({ title, backButton = true }) {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <ArrowLeft size={30} color={colors('white')} />
+                {backButton ? (
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <ArrowLeft size={30} color={colors('white')} />
+                    </TouchableOpacity>
+                ) : <View />}
                 <Text style={styles.title}>{title}</Text>
-                <ArrowFatLinesRight size={30} color={colors('red')} />
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <ArrowFatLinesRight size={30} color={colors('red')} />
+                </TouchableOpacity>
             </View>
         </View>
     );

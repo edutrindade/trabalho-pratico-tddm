@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import colors from '../global/colors';
 
 import Header from '../components/Header';
@@ -7,7 +7,7 @@ import Header from '../components/Header';
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Header title="Home" />
+            <Header title="Home" backButton={false} />
         </View>
     );
 }
@@ -15,7 +15,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors('black')
+        backgroundColor: colors("secondary"),
     },
     title: {
         fontSize: 25,
