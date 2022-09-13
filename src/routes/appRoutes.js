@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ArrowLeft } from 'phosphor-react-native';
+import { House, IdentificationBadge } from 'phosphor-react-native';
 import colors from '../global/colors';
 
 import Home from '../screens/Home';
@@ -26,10 +26,14 @@ function Tabs() {
         >
             <Tab.Screen name="Home" component={Home} options={{
                 tabBarIcon: ({ size, color }) => (
-                    <ArrowLeft size={size} color={color} />
+                    <House size={size} color={color} />
                 ),
             }} />
-            <Tab.Screen name="Perfil" component={Profile} />
+            <Tab.Screen name="Perfil" component={Profile} options={{
+                tabBarIcon: ({ size, color }) => (
+                    <IdentificationBadge size={size} color={color} />
+                ),
+            }} />
         </Tab.Navigator>
     );
 }
