@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { TextInput, StyleSheet, KeyboardAvoidingView, Platform, View, TouchableOpacity } from 'react-native';
-import { User, Eye, EyeSlash } from 'phosphor-react-native';
+import { User, Eye, EyeSlash, Key } from 'phosphor-react-native';
 
 import colors from '../global/colors';
 
-export default function Input({ placeholder, security = false, keyboardType, autoCorrect = true, returnKeyType = "next" }) {
+export default function Input({ placeholder, security = false, keyboardType, autoCorrect = true, returnKeyType = "next", icon = null }) {
     const [hidePass, setHidePass] = useState(true);
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
             <View style={styles.inputArea}>
+                {icon === 'user' && (
+                    <User color={colors('white')} size={20} />
+                )}
+                {icon === 'pass' && (
+                    <Key color={colors('white')} size={20} />
+                )}
                 <TextInput
                     placeholder={placeholder}
-                    placeholderTextColor={colors("white")}
+                    placeholderTextColor={colors("grey")}
                     secureTextEntry={hidePass}
                     keyboardType={keyboardType}
                     autoCorrect={autoCorrect}
@@ -46,12 +52,13 @@ const styles = StyleSheet.create({
 
     },
     input: {
-        width: '90%',
+        width: '80%',
         fontSize: 16,
+        paddingHorizontal: 10,
         color: colors("white"),
     },
     securityIcon: {
-        width: '10%',
+        width: '20%',
         height: 40,
         justifyContent: 'center',
         alignItems: 'center'

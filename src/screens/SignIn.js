@@ -22,9 +22,9 @@ export default function SignIn() {
                     style={{ width: '60%', height: '40%' }}
                 />
                 <View style={styles.form}>
-                    <Input placeholder="Usuário" keyboardType="email-address" />
+                    <Input placeholder="Usuário" keyboardType="email-address" icon="user" />
 
-                    <Input placeholder="Senha" security autoCorrect={false} returnKeyType="go" />
+                    <Input placeholder="Senha" security autoCorrect={false} returnKeyType="go" icon="pass" />
 
                     <TouchableOpacity style={styles.button} onPress={handleSignIn}>
                         <Text style={styles.textButton}>
