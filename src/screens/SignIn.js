@@ -17,11 +17,11 @@ export default function SignIn() {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style={styles.container}>
                 <StatusBar />
-                {/* <Image
-                    source={require('../assets/img/sinuca.png')}
+                <Image
+                    source={require('../assets/img/peladeiro.png')}
                     resizeMode="contain"
-                    style={{ width: '60%', height: '40%' }}
-                /> */}
+                    style={{ width: '45%' }}
+                />
                 <LogoAnimation />
                 <View style={styles.form}>
                     <Input placeholder="Usuário" keyboardType="email-address" icon="user" />
@@ -41,7 +41,7 @@ export default function SignIn() {
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
-        </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback >
     );
 }
 

@@ -3,6 +3,7 @@ import Football from '../../assets/animations/football-animation-orange-backgrou
 import Lottie from 'lottie-react-native';
 
 export default function LogoAnimation() {
+
     return (
 
         <Lottie
