@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import LogoAnimation from '../components/lottie'
 import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, SafeAreaView, StatusBar } from 'react-native';
 
-import Input from '../components/Input';
+import Input from '../components/input';
 import colors from '../global/colors';
 
 export default function SignIn() {
@@ -16,11 +17,12 @@ export default function SignIn() {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style={styles.container}>
                 <StatusBar />
-                <Image
+                {/* <Image
                     source={require('../assets/img/sinuca.png')}
                     resizeMode="contain"
                     style={{ width: '60%', height: '40%' }}
-                />
+                /> */}
+                <LogoAnimation />
                 <View style={styles.form}>
                     <Input placeholder="Usuário" keyboardType="email-address" icon="user" />
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { ArrowLeft, SignOut } from 'phosphor-react-native';
-import colors from '../global/colors';
+import colors from '../../global/colors';
 
 export default function Header({ title, backButton = true, exitButton = false }) {
     const navigation = useNavigation();

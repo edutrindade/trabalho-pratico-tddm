@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextInput, StyleSheet, KeyboardAvoidingView, Platform, View, TouchableOpacity } from 'react-native';
 import { User, Eye, EyeSlash, Key } from 'phosphor-react-native';
 
-import colors from '../global/colors';
+import colors from '../../global/colors';
 
 export default function Input({ placeholder, security = false, keyboardType, autoCorrect = true, returnKeyType = "next", icon = null }) {
     const [hidePass, setHidePass] = useState(true);

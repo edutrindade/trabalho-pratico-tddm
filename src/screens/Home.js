@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import colors from '../global/colors';
 
-import Header from '../components/Header';
+import Header from '../components/header';
 
 export default function Home() {
     return (
