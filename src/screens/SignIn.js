@@ -31,6 +31,12 @@ export default function SignIn() {
                             Entrar
                         </Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.forgot}>
+                        <Text style={styles.textForgot}>
+                            Esqueceu sua senha?
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </SafeAreaView>
         </TouchableWithoutFeedback>
@@ -54,12 +60,19 @@ const styles = StyleSheet.create({
         padding: 10,
         width: '100%',
         borderRadius: 12,
-        top: 15
+        marginVertical: 15
     },
     textButton: {
         fontSize: 20,
         color: '#142F30',
         textTransform: 'uppercase',
         textAlign: 'center'
+    },
+    forgot: {
+        alignItems: 'center',
+        padding: 8
+    },
+    textForgot: {
+        color: colors('white')
     }
 });
