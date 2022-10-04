@@ -1,18 +1,26 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { SoccerBall } from 'phosphor-react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import colors from '../../global/colors';
 
-export default function Card() {
+export default function Card({ title, type, onPress }) {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             <View style={styles.cards}>
-                <View style={styles.asideLeft}>
-                    <Text style={styles.title}>Nova pelada</Text>
-                </View>
-                <View style={styles.asideRight}>
-                    <SoccerBall color={colors('black')} size={50} />
-                </View>
+                <Text style={styles.title}>{title}</Text>
+                {type === 'player' && (
+                    <Image
+                        source={require('../../assets/img/neymar.webp')}
+                        resizeMode="contain"
+                        style={{ width: '30%' }}
+                    />
+                )}
+                {type === 'soccer' && (
+                    <Image
+                        source={require('../../assets/img/ball.png')}
+                        resizeMode="contain"
+                        style={{ width: '20%', right: 10 }}
+                    />
+                )}
             </View>
         </TouchableOpacity>
     );
@@ -22,7 +30,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         width: '90%',
-        margin: 10
+        margin: 15
     },
     cards: {
         alignItems: 'center',
@@ -39,7 +47,7 @@ const styles = StyleSheet.create({
 
     },
     asideRight: {
-
+        right: 10
     },
     title: {
         fontSize: 20

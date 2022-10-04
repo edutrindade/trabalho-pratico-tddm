@@ -4,8 +4,9 @@ import { House, IdentificationBadge } from 'phosphor-react-native';
 import colors from '../global/colors';
 
 import Home from '../screens/Home';
-import Profile from '../screens/Profile';
 import SignIn from '../screens/SignIn';
+import Players from '../screens/Players';
+import Settings from '../screens/Settings';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,7 @@ function Tabs() {
                     <House size={size} color={color} />
                 ),
             }} />
-            <Tab.Screen name="Perfil" component={Profile} options={{
+            <Tab.Screen name="Configurações" component={Settings} options={{
                 tabBarIcon: ({ size, color }) => (
                     <IdentificationBadge size={size} color={color} />
                 ),
@@ -43,6 +44,7 @@ export default function AppRoutes() {
         <Navigator screenOptions={{ headerShown: false }}>
             <Screen name="signin" component={SignIn} />
             <Screen name="home" component={Tabs} />
+            <Screen name="players" component={Players} />
         </Navigator>
     )
 }

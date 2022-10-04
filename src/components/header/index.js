@@ -11,7 +11,7 @@ export default function Header({ title, backButton = true, exitButton = false })
         <View style={styles.container}>
             <View style={styles.header}>
                 {backButton ? (
-                    <TouchableOpacity onPress={() => navigation.navigate('signin')}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <ArrowLeft size={30} color={colors('white')} />
                     </TouchableOpacity>
                 ) : <View />}
